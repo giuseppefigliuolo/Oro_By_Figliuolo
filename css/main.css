@@ -291,28 +291,33 @@ h2 {
 }
 
 .shop-list__product {
-  padding: 0.5rem;
+  padding: 0.55rem;
   width: 50%;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 4fr 1fr 1fr;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
 .shop-list__product img {
-  grid-row: 1/2;
+  width: 100%;
 }
 
 .shop-list__product__header {
-  grid-row: 2/3;
   font-weight: 700;
+  font-size: 0.85rem;
 }
 
-.shop-list__product__header span {
-  font-family: "Roboto", sans-serif;
+.shop-list__product__price {
+  justify-self: center;
+  align-self: center;
+  font-size: 0.9rem;
+  padding: 6px 0;
 }
 
 .shop-list__product__add-to-cart {
-  grid-row: 3/4;
+  width: max-content;
+  font-size: 0.7rem;
 }
 
 .menu__active {
