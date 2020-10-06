@@ -22,5 +22,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  const footerAccordion = () => {
+    const accordionItemHeaders = document.querySelectorAll(".top-part__menu__accordion__header");
+
+    accordionItemHeaders.forEach(el => {
+      el.addEventListener("click", evt => {
+        el.classList.toggle("active");
+        // Adding active also to img tag inside the container
+        el.children[1].classList.toggle("active");
+
+        const accordionItemBody = el.nextElementSibling;
+        if (el.classList.contains("active")) {
+          accordionItemBody.style.maxHeight = `${accordionItemBody.scrollHeight}px`;
+        } else {
+          accordionItemBody.style.maxHeight = 0;
+        }
+      });
+    });
+  };
+
   menuHandler();
+  footerAccordion();
 });
